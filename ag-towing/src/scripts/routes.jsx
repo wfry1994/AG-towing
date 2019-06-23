@@ -4,28 +4,19 @@ import HomeComponent from './components/HomeComponent'
 import AboutComponent from './components/AboutComponent'
 import PricingComponent from './components/PricingComponent'
 import NavBar from './components/Navbar/NavbarComponent'
-import Grid from '@material-ui/core/Grid'
-import { withStyles } from '@material-ui/core/styles'
 
-const styles={
-  appContainer: {
-    margin: '10px'
-  }
-}
-
-const routes = ({classes}) => {
+const routes = () => {
   return (
       <>
-        <NavBar/>
-        <Grid container className={classes.appContainer}>
+        <NavBar>
           <Switch>
             <Route exact path='/' component={HomeComponent}/>
             <Route path='/about'component={AboutComponent}/>
             <Route path='/pricing' component={PricingComponent}/>
           </Switch>
-        </Grid> 
+        </NavBar> 
       </>
   )
 }
 
-export default withStyles(styles)(routes)
+export default routes
